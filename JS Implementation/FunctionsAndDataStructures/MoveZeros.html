@@ -1,0 +1,33 @@
+<html>
+    <!--Write a function move_zeros(numbers) that moves all 0s to the end of the list while maintaining the order of the other elements.-->
+    <body>
+        <script>
+                function moveZeros(numbers)
+                {
+                    const zero = []
+                    const num = []
+                    index = 0
+
+                    for(let i=0; i<numbers.length; i++)
+                    {
+                        if(numbers[i]==0)
+                        {
+                            zero[index] = numbers[i]
+                            index++
+                        }
+
+                        else
+                        {
+                            num[index] = numbers[i]
+                            index++
+                        }
+                    }
+                    const result = num.concat(zero)
+                    return result
+                }
+
+                const numbers = [1, 2, 0, 5, 0, 15, 0, 0, 0, 11]
+                console.log(moveZeros(numbers))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,42 @@
+<html>
+<!--Write a function first_missing_positive(numbers) that finds the smallest positive integer that is missing from a given list. Example: 
+first_missing_positive( [3, 4, -1, 1] ) # Output: 2 
+first_missing_positive( [1, 2, 0] ) # Output: 3-->
+    <body>
+        <script>
+            function firstMissingPositive(numbers) 
+            {
+                let n = numbers.length
+
+                for (let i = 0; i < n; i++) 
+                {
+                    if (numbers[i] <= 0 || numbers[i] > n) 
+                    {
+                        numbers[i] = n + 1
+                    }
+                }
+
+                for (let i = 0; i < n; i++) 
+                {
+                    let num = Math.abs(numbers[i])
+                    if (num <= n) 
+                    {
+                        numbers[num - 1] = -Math.abs(numbers[num - 1])
+                    }
+                }
+
+                for (let i = 0; i < n; i++) 
+                {
+                    if (numbers[i] > 0) 
+                    {
+                        return i + 1
+                    }
+                }
+                return n + 1
+            }
+
+            console.log(firstMissingPositive([3, 4, -1, 1]))
+            console.log(firstMissingPositive([1, 2, 0]))
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+    <!--Write a function special_rearrangement(nums) that takes a list of integers and rearranges it so that all even numbers appear before all odd numbers, while preserving the original relative order of both even and odd numbers.-->
+    <body>
+        <script>
+            function special_rearrangement(nums) 
+            {
+                const result = []
+                let Index = 0
+
+                for (let i = 0; i < nums.length; i++) 
+                {
+                    if (nums[i] % 2 === 0) {
+                        result[Index] = nums[i]
+                        Index++
+                    }
+                }
+
+                for (let i = 0; i < nums.length; i++) 
+                {
+                    if (nums[i] % 2 !== 0) {
+                        result[Index] = nums[i]
+                        Index++
+                    }
+                }
+                return result
+            }
+            const nums = [3, 8, 5, 12, 10, 1, 4, 7]
+            console.log(special_rearrangement(nums))
+        </script>
+    </body>
+</html>

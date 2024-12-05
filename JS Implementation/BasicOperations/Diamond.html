@@ -1,0 +1,60 @@
+<html>
+<!--Write a JavaScript program that prompts the user to enter a number of rows and then generates a symmetrical "palindrome" star pattern, centered to form a diamond shape. Example: 
+For rows = 4, 
+   *
+  ***
+ *****
+*******
+ *****
+  ***
+   *
+For rows =5, 
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *-->
+    <body>
+        <script>
+            let rows = prompt("Please enter number of rows: ")
+
+            for (let i=1; i<=rows; i++) 
+            {
+                let space = ""
+                let star = ""
+
+                for (let j=1; j<=rows-i; j++)
+                {
+                    space += " "
+                }
+
+                for (let k=1; k<=(2*i)-1;k++)
+                {
+                    star += "*"
+                }
+                console.log(space + star)
+            }
+
+            for (let i = rows-1; i >=1 ; i--)
+            {
+                let space = ""
+                let star = ""
+
+                for (let k=1; k<=rows-i; k++)
+                {
+                    space += " "
+                }
+
+                for (let k=1; k<=(2*i)-1;k++)
+                {
+                    star += "*"
+                }
+                console.log(space + star)
+            }
+        </script>
+    </body>
+</html>

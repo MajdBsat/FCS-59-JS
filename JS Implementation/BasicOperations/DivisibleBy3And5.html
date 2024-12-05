@@ -1,0 +1,18 @@
+<html>
+    <!--Write a JavaScript program that prompts the user to enter a number, x, and displays all numbers from 1 to x that are divisible by both 3 and 5.-->
+    <body>
+        <script>
+                let num = prompt("Please Enter a number: ")
+                console.log("The Numbers divisible by 3 and 5 are: ")
+                let line = ""
+                for (let i=1; i<=num; i++)
+                {   
+                    if (i%3==0 && i%5==0)
+                    {
+                        line += i + ", "
+                    }
+                }
+                console.log(line)
+        </script>
+    </body>
+</html>

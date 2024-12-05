@@ -1,0 +1,35 @@
+<html>
+<!--Write a function rebuild_sentence(words, lengths) that reconstructs a sentence by joining words in the list according to the word lengths provided.
+rebuild_sentence( [ "the", "sky", "is", "blue" ] , [ 3, 2, 2, 1 ] ) # Output: "the sk is b"-->
+    <body>
+        <script>
+            function rebuildSentence(words, lengths) 
+            {
+                if (words.length !== lengths.length) 
+                {
+                    throw new Error("The lengths of the words and lengths arrays must match.")
+                }
+
+                let result = ''
+                for (let i = 0; i < words.length; i++) 
+                {
+                    let truncatedWord = ''
+                    for (let j = 0; j < lengths[i] && j < words[i].length; j++) 
+                    {
+                        truncatedWord += words[i][j]
+                    }
+                    result += truncatedWord
+                    if (i < words.length - 1) 
+                    {
+                        result += ' '
+                    }
+                }
+                return result
+            }
+
+        const words = ["the", "sky", "is", "blue"]
+        const lengths = [3, 2, 2, 1]
+        console.log(rebuildSentence(words, lengths))
+        </script>
+    </body>
+</html>

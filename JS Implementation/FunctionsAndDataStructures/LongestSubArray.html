@@ -1,0 +1,26 @@
+<html>
+    <!--Write a function longest_subarray(array) that takes a binary list (containing only 0s and 1s) as input and returns the length of the longest adjacent subarray with an equal number of 0s and 1s.-->
+    <body>
+        <script>
+            function longestSubArray(array)
+            {
+                const result = []
+                let index = 0
+
+                for(let i=0; i<array.length; i++)
+                {
+                    if(array[i]!=array[i+1])
+                    {
+                        result[index] = array[i]
+                        result[index+1] = array[i+1]
+                        index++
+                    }
+                }
+                return result
+            }
+
+            const array = [0,1,1,0]
+            console.log(longestSubArray(array))
+        </script>
+    </body>
+</html>

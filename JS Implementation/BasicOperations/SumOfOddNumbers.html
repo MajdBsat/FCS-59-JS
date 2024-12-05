@@ -1,0 +1,18 @@
+<html>
+<!--Create a program that prompts the user to enter a number n and then calculates and displays the sum of all odd numbers up to that number n.-->
+    <body>
+        <script>
+            let num = prompt("Please Enter a number: ")
+            
+            for (let i=1; i<=num; i++)
+            {
+                let sum = 0
+                if (i%2!=0)
+                {
+                    sum += i
+                    console.log(sum)
+                }
+            }
+        </script>
+    </body>
+</html>
